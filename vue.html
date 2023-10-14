@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <p>Товаров в корзине {{count}}</p>
+        <div v-for="item in products" :key="item.id">
+            <p>id: {{item.id}}</p>
+            <h3>name: {{item.name}}</h3>
+            <button @click = 'addCart(item)'>Купить</button>
+            <button>Мне исполнилось 14 лет</button>
+            <button>Мне еще нет 14 лет</button>
+        </div><br>
+        <br>
+        <button @click="makeOpen()">Мне исполнилось 14 лет</button>
+        <br>
+        <br>
+        <button @click="makeClose()">Мне еще нет 14 лет</button>
+        <p>{{message}}</p>
+        <br>
+        <button @click = 'show'>{{showDescription ? 'скрыть' : 'показать'}}</button>
+        <p v-show="showDescription">{{product.description}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                product: {
+                    name: 'Товар1',
+                    description: 'Описание товара'
+                },
+                showDescription: false,
+                // message: '',
+                products: [
+                   {
+                    id: 1,
+                    name: 'cart1',
+                    inCart: false,
+                   },
+                   {
+                    id: 2,
+                    name: 'cart2',
+                    inCart: false,
+                   },
+                   {
+                    id: 3,
+                    name: 'cart3',
+                    inCart: false,
+                   },
+                   {
+                    id: 4,
+                    name: 'cart4',
+                    inCart: false,
+                   },
+                ],
+                isAllowed: false
+            },
+            methods: {
+                show(){
+                    this.showDescription = !this.showDescription
+                },
+                addCart(item){
+                    if(!item.inCart){
+                        item.inCart = true;
+                        this.count++
+                    }
+                },
+                makeOpen(){
+                    this.isAllowed = true
+                },
+                makeClose(){
+                    this.isAllowed = false
+                }
+            },
+            computed: {
+                message(){
+                    return this.isAllowed ? 'Можете заказать товар' : 'Доступ закрыт'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
