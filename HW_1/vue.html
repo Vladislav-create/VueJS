@@ -1,0 +1,64 @@
+<!-- 1. Создать кнопку "Перевернуть". При клике на кнопку текст кнопки должен перевернуться и отобразиться в обратном порядке.
+2. Есть список элементов. Пользователь может добавлять новые элементы списка с текстом “Новый элемент списка” нажав на кнопку "Добавить".
+3. *Дополнительное задание: При клике на элемент списка он должен быть удален. (по желанию) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app">
+        <button @click = "flipTheText()">{{ textBtn }}</button>
+        <br>
+        <button @click = "addNewElemInList()">Добавить</button>
+
+        <ul class="list">
+            <li v-for = "item in listItems" :key="item.id" @click = "addNewElemInList()">{{ item.text }}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                textBtn: 'Перевернуть текст',
+                newElemText: 'Новый элемент списка',
+                idElem: 3,
+                listItems: [
+                    {
+                        id: 1,
+                        text: 'Элемент 1'
+                    },
+                    {
+                        id: 2,
+                        text: 'Элемент 2'
+                    }
+                ]
+            },
+            methods: {
+                flipTheText(){
+                    let newText = ''
+                    for (let i = this.textBtn.length-1; i > -1; i--) {
+                        newText+=this.textBtn[i];
+                    }
+                    console.log(newText);
+                    this.textBtn = newText;
+                },
+                addNewElemInList(){
+                    this.idElem++
+                    let newElem = {
+                        id: this.idElem,
+                        text: this.newElemText
+                    }
+                    this.listItems.push(newElem)
+                    console.log(newElem);
+                    console.log(this.listItems);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

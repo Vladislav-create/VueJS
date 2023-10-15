@@ -1,0 +1,225 @@
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 53px;
+  margin-bottom: 57px;
+}
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header__left__text {
+  color: #292F36;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+.header__right {
+  display: flex;
+  gap: 50px;
+}
+.header__right__nav {
+  color: #292F36;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Serif Display", serif;
+  font-family: "Jost", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-img__banner {
+  position: relative;
+}
+
+.main-text {
+  position: absolute;
+  top: 359px;
+  left: 412px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 434px;
+}
+.main-text__header {
+  color: #292F36;
+  font-size: 61px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+}
+.main-text__text {
+  color: #4D5053;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+}
+.main-text__btn {
+  cursor: pointer;
+  border: none;
+  padding: 26px 49px;
+  max-width: 220px;
+  background-color: #292F36;
+  border-radius: 18px;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: 0.36px;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-content__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 737px;
+}
+.main-content__header__title {
+  color: #292F36;
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: 1px;
+  margin-top: 96px;
+  margin-bottom: 8px;
+}
+.main-content__header__subtitle {
+  color: #4D5053;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+}
+
+.box-carts {
+  margin-top: 93px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  justify-content: space-between;
+}
+
+.cart__img {
+  max-width: 500px;
+  margin-bottom: 24px;
+}
+.cart__infobox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.achievements-background {
+  background-color: #F4F0EC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievements {
+  display: flex;
+  padding-top: 151px;
+  padding-bottom: 151px;
+  gap: 130px;
+}
+.achievements__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.achievements__item__text {
+  color: #4D5053;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+}
+
+.articles-news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.articles-news__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 811px;
+  margin-bottom: 53px;
+}
+.articles-news__header__title {
+  color: #292F36;
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: 1px;
+  padding-top: 96px;
+  padding-bottom: 12px;
+}
+.articles-news__header__subtitle {
+  color: #4D5053;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+}
+.articles-news__carts {
+  display: flex;
+  gap: 27px;
+}
+.articles-news__carts__box {
+  padding: 21px;
+  border-radius: 62px;
+  border: 1px solid #E7E7E7;
+  box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+}
+.articles-news__carts__cart {
+  max-width: 340px;
+}/*# sourceMappingURL=index.css.map */
