@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./styles/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;500;600&family=Lato:wght@300;400;900&family=Open+Sans:wght@300;500;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>  
+    <div id="app">
+        <section class="header center">
+            <section class="header__left">
+                    <a href="index.html" class="header__left__logo" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                            <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>
+                            </svg>
+                    </a>
+                    <a href="index.html" class="header__left__text" target="_blank" rel="noopener noreferrer">
+                        Interno
+                    </a>
+            </section>
+            <section class="header__right">
+                <a href="" class="header__right__nav">Home</a>
+                <a href="" class="header__right__nav">Project</a>
+                <a href="./blog.html" class="header__right__nav">Blog</a>
+            </section>
+        </section>
+        <section class="header-img">
+            <img class="header-img__img" src="./img/blogHeaderImg.png" alt="">
+            <div class="header-nav-elem">
+                <h3 class="header-nav-elem__title">Articles & News</h3>
+                <div class="header-nav-elem__bread-crumbs">
+                    <a class="header-nav-elem__bread-crumbs__crumb" href="./index.html">Home</a>
+                    <span>/</span>
+                    <a class="header-nav-elem__bread-crumbs__crumb" href="./blog.html">Blog</a>
+                </div>
+            </div>
+        </section>
+        <section class="latest-post center">
+            <h3 class="latest-post__header">Latest Post</h3>
+            <div class="latest-post__content">
+                <img src="./img/latestPost.png" alt="" class="latest-post__content__img">
+                <div class="latest-post__content__text">
+                    <h3 class="latest-post__content__text__title">Low Cost Latest Invented Interior Designing Ideas</h3>
+                    <p class="latest-post__content__text__discribe">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.
+                        <br><br>
+                        Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
+                    <div class="latest-post__content__text__footer">
+                        <p class="latest-post__content__text__footer__date">26 December,2022 </p>
+                        <svg class="latest-post__content__text__footer__btn" width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="26" cy="26.5" r="26" fill="#F4F0EC"/>
+                            <path d="M23.771 33.1855L29.7139 26.4998L23.771 19.8141" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="articles-news center">
+            <div class="articles-news__header">
+                <h3 class="articles-news__header__title">
+                    Articles & News
+                </h3>
+                <p class="articles-news__header__subtitle">
+                    It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.
+                </p>
+            </div>
+            <div class="articles-news__carts">
+                <div class="articles-news__carts__box" v-for="product in products" :key="products.id">
+                    <article class="articles-news__carts__cart">
+                        <img class="articles-news__carts__cart__img" :src="product.imgSrc" alt="">
+                        <div class="articles-news__carts__cart__info">
+                            <h3 class="articles-news__carts__cart__title">{{ product.title }}</h3>
+                            <div class="articles-news__carts__cart__info-box">
+                                <p class="articles-news__carts__cart__date">26 December,2022</p>
+                                <svg class="articles-news__carts__cart__btn" xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
+                                    <circle cx="26" cy="26.267" r="26" fill="#F4F0EC"/>
+                                    <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </div>
+                        </div>
+                    </article>        
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                products: [
+                    {
+                        id: 0,
+                        imgSrc: './img/Photo.png',
+                        title: 'Let’s Get Solution For Building Construction Work',
+                        date: Date.now()
+                    },
+                    {
+                        id: 1,
+                        imgSrc: './img/Photo(1).png',
+                        title: 'Let’s Get Solution For Building Construction Work',
+                        date: Date.now()
+                    },
+                    {
+                        id: 2,
+                        imgSrc: './img/Photo(2).png',
+                        title: 'Let’s Get Solution For Building Construction Work',
+                        date: Date.now()
+                    },
+                    {
+                        id: 3,
+                        imgSrc: './img/Photo(2).png',
+                        title: 'Let’s Get Solution For Building Construction Work',
+                        date: Date.now()
+                    },
+                    {
+                        id: 4,
+                        imgSrc: './img/Photo(1).png',
+                        title: 'Let’s Get Solution For Building Construction Work',
+                        date: Date.now()
+                    },
+                    {
+                        id: 5,
+                        imgSrc: './img/Photo.png',
+                        title: 'Let’s Get Solution For Building Construction Work',
+                        date: Date.now()
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
