@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@300;400;500;600&family=Lato:wght@300;400;900&family=Open+Sans:wght@300;500;600&display=swap" rel="stylesheet">
-    <title>Главная страница</title>
-</head>
-<body>
+<template>
     <div class="box-content">
         <section class="header center">
             <section class="header__left">
@@ -29,7 +18,7 @@
             </section>
         </section>
         <section class="main-img center">
-            <img class="main-img__banner" src="./img/Banner.png" alt="Фото комнаты">
+            <img class="main-img__banner" src="../assets/Banner.png" alt="Фото комнаты">
             <div class="main-text">
                 <h1 class="main-text__header">Let Your Home 
                     Be Unique</h1>
@@ -52,7 +41,7 @@
             </section>
             <div class="box-carts">
                 <article class="cart">
-                    <img src="./img/Image.png" alt="" class="cart__img">
+                    <img src="../assets/Image.png" alt="" class="cart__img">
                     <section class="cart__infobox">
                         <div class="cart__info">
                             <p class="cart__name">Modern Kitchan</p>
@@ -69,7 +58,7 @@
                     </section>
                 </article>
                 <article class="cart">
-                    <img src="./img/Image (1).png" alt="" class="cart__img">
+                    <img src="../assets/Image (1).png" alt="" class="cart__img">
                     <section class="cart__infobox">
                         <div class="cart__info">
                             <p class="cart__name">Modern Kitchan</p>
@@ -86,7 +75,7 @@
                     </section>
                 </article>
                 <article class="cart">
-                    <img src="./img/Image (2).png" alt="" class="cart__img">
+                    <img src="../assets/Image (2).png" alt="" class="cart__img">
                     <section class="cart__infobox">
                         <div class="cart__info">
                             <p class="cart__name">Modern Kitchan</p>
@@ -103,7 +92,7 @@
                     </section>
                 </article>
                 <article class="cart">
-                    <img src="./img/Image (3).png" alt="" class="cart__img">
+                    <img src="../assets/Image (3).png" alt="" class="cart__img">
                     <section class="cart__infobox">
                         <div class="cart__info">
                             <p class="cart__name">Modern Kitchan</p>
@@ -124,19 +113,19 @@
         <section class="achievements-background">
             <div class="achievements center">
                 <article class="achievements__item">
-                    <img src="./img/12.png" alt="" class="achievements__item__img">
+                    <img src="../assets/12.png" alt="" class="achievements__item__img">
                     <p class="achievements__item__text">Years Of Experiance</p>
                 </article>
                 <article class="achievements__item">
-                    <img src="./img/85.png" alt="" class="achievements__item__img">
+                    <img src="../assets/85.png" alt="" class="achievements__item__img">
                     <p class="achievements__item__text">Success Project</p>
                 </article>
                 <article class="achievements__item">
-                    <img src="./img/15.png" alt="" class="achievements__item__img">
+                    <img src="../assets/15.png" alt="" class="achievements__item__img">
                     <p class="achievements__item__text">Active Project</p>
                 </article>
                 <article class="achievements__item">
-                    <img src="./img/95.png" alt="" class="achievements__item__img">
+                    <img src="../assets/95.png" alt="" class="achievements__item__img">
                     <p class="achievements__item__text">Happy CUstomers</p>
                 </article>
             </div>
@@ -153,7 +142,7 @@
             <div class="articles-news__carts">
                 <div class="articles-news__carts__box">
                     <article class="articles-news__carts__cart">
-                        <img class="articles-news__carts__cart__img" src="./img/Photo.png" alt="">
+                        <img class="articles-news__carts__cart__img" src="../assets/Photo.png" alt="">
                         <div class="articles-news__carts__cart__info">
                             <h3 class="articles-news__carts__cart__title">Let’s Get Solution For Building Construction Work</h3>
                             <div class="articles-news__carts__cart__info-box">
@@ -167,7 +156,7 @@
                     </article>
                 </div>
                 <div class="articles-news__carts__box"><article class="articles-news__carts__cart">
-                    <img class="articles-news__carts__cart__img" src="./img/Photo(1).png" alt="">
+                    <img class="articles-news__carts__cart__img" src="../assets/Photo(1).png" alt="">
                     <div class="articles-news__carts__cart__info">
                         <h3 class="articles-news__carts__cart__title">Low Cost Latest Invented Interior Designing
                             Ideas.</h3>
@@ -181,7 +170,7 @@
                     </div>
                 </article></div>
                 <div class="articles-news__carts__box"><article class="articles-news__carts__cart">
-                    <img class="articles-news__carts__cart__img" src="./img/Photo(2).png" alt="">
+                    <img class="articles-news__carts__cart__img" src="../assets/Photo(2).png" alt="">
                     <div class="articles-news__carts__cart__info">
                         <h3 class="articles-news__carts__cart__title">Best For Any Office & Business Interior 
                             Solution</h3>
@@ -197,5 +186,257 @@
             </div>
         </section>
     </div>
-</body>
-</html>
+</template>
+
+<script>
+export default {
+    name: 'IndexComp',
+
+    data() {
+        return {
+            
+        };
+    },
+
+    mounted() {
+        
+    },
+
+    methods: {
+        
+    },
+};
+</script>
+
+<style lang="scss" scoped>
+    * {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Jost', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 53px;
+    margin-bottom: 57px;
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &__text {
+            color: #292F36;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%;
+        }
+    }
+    &__right {
+        display: flex;
+        gap: 50px;
+        &__nav {
+            color: #292F36;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 125%;
+        }
+    }
+    }
+    .main-img__banner {
+        position: relative;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 359px;
+        left: 412px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        max-width: 434px;
+        &__header {
+            color: #292F36;
+            font-size: 61px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 125%;
+        }
+        &__text {
+            color: #4D5053;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: 0.22px;
+        }
+        &__btn {
+            cursor: pointer;
+            border: none;
+            padding: 26px 49px;
+            max-width: 220px;
+            background-color: #292F36;
+            border-radius: 18px;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%;
+            letter-spacing: 0.36px;
+        }
+    }
+
+    .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        &__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 737px;
+            &__title {
+                color: #292F36;
+                text-align: center;
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 125%;
+                letter-spacing: 1px;
+                margin-top: 96px;
+                margin-bottom: 8px;
+            }
+            &__subtitle {
+                color: #4D5053;
+                text-align: center;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                letter-spacing: 0.22px;
+            }
+        }
+    }
+
+    .box-carts {
+        margin-top: 93px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 56px;
+        justify-content: space-between;
+    }
+
+    .cart {
+        &__img {
+            max-width: 500px;
+            margin-bottom: 24px;
+        }
+        &__infobox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .achievements-background {
+        background-color: #F4F0EC;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .achievements {
+        display: flex;
+        padding-top: 151px;
+        padding-bottom: 151px;
+        gap: 130px;
+        &__item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            &__text{
+                color: #4D5053;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                letter-spacing: 0.22px;
+            }
+        }
+    }
+
+    .articles-news {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 811px;
+            margin-bottom: 53px;
+            &__title {
+                color: #292F36;
+                text-align: center;
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 125%;
+                letter-spacing: 1px;
+                padding-top: 96px;
+                padding-bottom: 12px;
+            }
+            &__subtitle {
+                color: #4D5053;
+                text-align: center;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                letter-spacing: 0.22px;
+            }
+        }
+        &__carts {
+            display: flex;
+            gap: 27px; 
+            &__box {
+                padding: 21px;
+                border-radius: 62px;
+                border: 1px solid #E7E7E7;
+                box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+            }
+            &__cart {
+                max-width: 340px;
+                &__info-box {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
+</style>
