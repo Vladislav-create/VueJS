@@ -3,6 +3,7 @@
     <IndexComp/>
     <BlogComp/>
     <BlogDetailsComp/>
+    <ProductDetails />
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import IndexComp from './components/IndexComp.vue'
 import BlogComp from './components/BlogComp.vue'
 import BlogDetailsComp from './components/BlogDetailsComp.vue'
+import ProductDetails from './components/ProductDetails.vue'
 
 export default {
   name: 'App',
   components: {
     IndexComp,
     BlogComp,
-    BlogDetailsComp
+    BlogDetailsComp,
+    ProductDetails,
   }
 }
 </script>
