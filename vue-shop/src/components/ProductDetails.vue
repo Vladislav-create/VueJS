@@ -3,6 +3,7 @@
         <p class="product__name">{{ this.product.name }}</p>
         <p class="product__price">{{ formattedPrice }}</p>
         <p class="product__available">{{ available }}</p>
+        <button >{{ date }}</button>
     </div>
 </template>
 
@@ -34,7 +35,17 @@ export default {
         },
         available() {
             return this.product.available ? 'Услуга доступна' : 'На данный момент услуга не доступна'
-        }
+        },
+        date(){
+            const dateNow = new Date();
+
+            
+               const day = dateNow.getDate();
+               const month = dateNow.getMonth() + 1;
+               const year = dateNow.getFullYear();
+            
+            return (`${day}.${month}.${year}`);
+        },
     }
 };
 </script>

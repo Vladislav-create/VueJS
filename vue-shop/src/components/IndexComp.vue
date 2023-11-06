@@ -225,7 +225,7 @@ export default {
     .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
-}
+    }
     .header {
     display: flex;
     justify-content: space-between;
