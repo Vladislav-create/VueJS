@@ -46,7 +46,7 @@
         <button
           class="blogDetails-content__tags__btn"
           v-for="tag in tags"
-          :key="tag.indexOf"
+          :key="tag"
           @click="sortProjects(tag)"
         >
           {{ tag }}
