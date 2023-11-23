@@ -1,22 +1,6 @@
 <template>
     <div>
-        <!-- <section class="header center">
-            <section class="header__left">
-                    <a href="index.html" class="header__left__logo"  rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                            <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>
-                            </svg>
-                    </a>
-                    <a href="index.html" class="header__left__text"  rel="noopener noreferrer">
-                        Interno
-                    </a>
-            </section>
-            <section class="header__right">
-                <a href="index.html" class="header__right__nav">Home</a>
-                <a href="" class="header__right__nav">Project</a>
-                <a href="./blog.html" class="header__right__nav">Blog</a>
-            </section>
-        </section> -->
+        <HeaderComp />
         <section class="header-img">
             <img class="header-img__img" src="../assets/blogHeaderImg.png" alt="">
             <div class="header-nav-elem">
@@ -39,11 +23,10 @@
                         Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
                     <div class="latest-post__content__text__footer">
                         <p class="latest-post__content__text__footer__date">26 December,2022 </p>
-                        <a href="#"><svg class="latest-post__content__text__footer__btn" width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <router-link to="/blogdetailscomp"><svg class="latest-post__content__text__footer__btn" width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="26" cy="26.5" r="26" fill="#F4F0EC"/>
                             <path d="M23.771 33.1855L29.7139 26.4998L23.771 19.8141" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg></a>
-                            
+                            </svg></router-link> 
                     </div>
                 </div>
             </div>
@@ -75,63 +58,62 @@
                 </div>
             </div>
         </section>
+        <FooterComp />
     </div>
 </template>
 
 <script>
+import FooterComp from './FooterComp.vue';
+import HeaderComp from './HeaderComp.vue';
+
 export default {
     name: 'BlogComp',
-
     data() {
         return {
             products: [
-                    {
-                        id: 0,
-                        imgSrc: require('../assets/Photo.png'),
-                        title: 'Let’s Get Solution For Building Construction Work',
-                        date: Date.now()
-                    },
-                    {
-                        id: 1,
-                        imgSrc: require('../assets/Photo(1).png'),
-                        title: 'Let’s Get Solution For Building Construction Work',
-                        date: Date.now()
-                    },
-                    {
-                        id: 2,
-                        imgSrc: require('../assets/Photo(2).png'),
-                        title: 'Let’s Get Solution For Building Construction Work',
-                        date: Date.now()
-                    },
-                    {
-                        id: 3,
-                        imgSrc: require('../assets/Photo(2).png'),
-                        title: 'Let’s Get Solution For Building Construction Work',
-                        date: Date.now()
-                    },
-                    {
-                        id: 4,
-                        imgSrc: require('../assets/Photo(1).png'),
-                        title: 'Let’s Get Solution For Building Construction Work',
-                        date: Date.now()
-                    },
-                    {
-                        id: 5,
-                        imgSrc: require('../assets/Photo.png'),
-                        title: 'Let’s Get Solution For Building Construction Work',
-                        date: Date.now()
-                    }
-                ]
+                {
+                    id: 0,
+                    imgSrc: require('../assets/Photo.png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 1,
+                    imgSrc: require('../assets/Photo(1).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 2,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 3,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 4,
+                    imgSrc: require('../assets/Photo(1).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 5,
+                    imgSrc: require('../assets/Photo.png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                }
+            ]
         };
     },
-
     mounted() {
-        
     },
-
-    methods: {
-        
-    },
+    methods: {},
+    components: { HeaderComp, FooterComp }
 };
 </script>
 

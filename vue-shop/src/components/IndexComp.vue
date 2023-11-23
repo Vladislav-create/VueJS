@@ -1,38 +1,23 @@
 <template>
     <div class="box-content">
-        <section class="header center">
-            <section class="header__left">
-                    <a href="index.html" class="header__left__logo"  rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                            <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>
-                            </svg>
-                    </a>
-                    <a href="index.html" class="header__left__text"  rel="noopener noreferrer">
-                        Interno
-                    </a>
-            </section>
-            <section class="header__right">
-                <a href="" class="header__right__nav">Home</a>
-                <a href="" class="header__right__nav">Project</a>
-                <a href="./blog.html" class="header__right__nav">Blog</a>
-            </section>
-        </section>
+        <HeaderComp />
         <section class="main-img center">
             <img class="main-img__banner" src="../assets/Banner.png" alt="Фото комнаты">
-            <div class="main-text">
+            <!-- <div class="main-text">
                 <h1 class="main-text__header">Let Your Home 
                     Be Unique</h1>
                 <p class="main-text__text">
                     There are many variations of the passages of
                     lorem Ipsum fromavailable, majority.
                 </p>
-                <button class="main-text__btn">
+                <router-link to="/ourproject"><button class="main-text__btn">
                     Get Started
                     <svg class="main-text__btn__arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
                         <path d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887" stroke="#CDA274" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
                         </svg>
-                </button>
-            </div>
+                </button></router-link>
+                
+            </div> -->
         </section>
         <section class="main-content center">
             <section class="main-content__header">
@@ -185,26 +170,23 @@
                 </article></div>
             </div>
         </section>
+        <FooterComp />
     </div>
 </template>
 
 <script>
+import FooterComp from './FooterComp.vue';
+import HeaderComp from './HeaderComp.vue';
+
 export default {
     name: 'IndexComp',
-
     data() {
-        return {
-            
-        };
+        return {};
     },
-
     mounted() {
-        
     },
-
-    methods: {
-        
-    },
+    methods: {},
+    components: { HeaderComp, FooterComp }
 };
 </script>
 
@@ -226,36 +208,6 @@ export default {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
     }
-    .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 53px;
-    margin-bottom: 57px;
-    &__left {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        &__text {
-            color: #292F36;
-            font-size: 40px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 125%;
-        }
-    }
-    &__right {
-        display: flex;
-        gap: 50px;
-        &__nav {
-            color: #292F36;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 125%;
-        }
-    }
-    }
     .main-img__banner {
         position: relative;
     }
@@ -263,7 +215,7 @@ export default {
     .main-text {
         position: absolute;
         top: 359px;
-        left: 412px;
+        padding-left: 5%;
         display: flex;
         flex-direction: column;
         gap: 18px;
@@ -438,5 +390,15 @@ export default {
                 }
             }
         }
+    }
+    .cart__bread-crumbs {
+        color: #4D5053;
+    }
+    .cart__info{
+        text-align: start;
+    }
+    .cart__bread-crumbs-seporate {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 </style>

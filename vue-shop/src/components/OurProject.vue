@@ -1,5 +1,6 @@
 <template>
   <div>
+    <HeaderComp />
     <section class="blogDetails-header">
       <img
         class="blogDetails-header__img"
@@ -53,224 +54,226 @@
         </button>
       </section>
     </section>
+    <FooterComp />
   </div>
 </template>
 
 <script>
+import FooterComp from './FooterComp.vue';
+import HeaderComp from './HeaderComp.vue';
+
 export default {
-  name: "OurProject",
-
-  data() {
-    return {
-      count: 0,
-      resultArr: [],
-      projects: [
-        {
-          id: 0,
-          projectsName: "Kitchen",
-          ourProjects: [
-            {
-              id: 0,
-              img: require("../assets/Project.png"),
-              title: "Kitchen",
-            },
-            {
-              id: 1,
-              img: require("../assets/Project1.png"),
-              title: "Kitchen",
-            },
-            {
-              id: 2,
-              img: require("../assets/Project2.png"),
-              title: "Kitchen",
-            },
-            {
-              id: 3,
-              img: require("../assets/Project3.png"),
-              title: "Kitchen",
-            },
-            {
-              id: 4,
-              img: require("../assets/Project4.png"),
-              title: "Kitchen",
-            },
-            {
-              id: 5,
-              img: require("../assets/Project5.png"),
-              title: "Kitchen",
-            },
-            {
-              id: 6,
-              img: require("../assets/Project6.png"),
-              title: "Kitchen",
-            },
-            {
-              id: 7,
-              img: require("../assets/Project7.png"),
-              title: "Kitchen",
-            },
-          ],
-        },
-        {
-          id: 1,
-          projectsName: "Bathroom",
-          ourProjects: [
-            {
-              id: 8,
-              img: require("../assets/Project.png"),
-              title: "Bathroom",
-            },
-            {
-              id: 9,
-              img: require("../assets/Project1.png"),
-              title: "Bathroom",
-            },
-            {
-              id: 10,
-              img: require("../assets/Project2.png"),
-              title: "Bathroom",
-            },
-            {
-              id: 11,
-              img: require("../assets/Project3.png"),
-              title: "Bathroom",
-            },
-            {
-              id: 12,
-              img: require("../assets/Project4.png"),
-              title: "Bathroom",
-            },
-            {
-              id: 13,
-              img: require("../assets/Project5.png"),
-              title: "Bathroom",
-            },
-            {
-              id: 14,
-              img: require("../assets/Project6.png"),
-              title: "Bathroom",
-            },
-            {
-              id: 15,
-              img: require("../assets/Project7.png"),
-              title: "Bathroom",
-            },
-          ],
-        },
-        {
-          id: 0,
-          projectsName: "Bedroom",
-          ourProjects: [
-            {
-              id: 0,
-              img: require("../assets/Project.png"),
-              title: "Bedroom",
-            },
-            {
-              id: 1,
-              img: require("../assets/Project1.png"),
-              title: "Bedroom",
-            },
-            {
-              id: 2,
-              img: require("../assets/Project2.png"),
-              title: "Bedroom",
-            },
-            {
-              id: 3,
-              img: require("../assets/Project3.png"),
-              title: "Bedroom",
-            },
-            {
-              id: 4,
-              img: require("../assets/Project4.png"),
-              title: "Bedroom",
-            },
-            {
-              id: 5,
-              img: require("../assets/Project5.png"),
-              title: "Bedroom",
-            },
-            {
-              id: 6,
-              img: require("../assets/Project6.png"),
-              title: "Bedroom",
-            },
-            {
-              id: 7,
-              img: require("../assets/Project7.png"),
-              title: "Bedroom",
-            },
-          ],
-        },
-        {
-          id: 0,
-          projectsName: "Living Area",
-          ourProjects: [
-            {
-              id: 0,
-              img: require("../assets/Project.png"),
-              title: "Living Area",
-            },
-            {
-              id: 1,
-              img: require("../assets/Project1.png"),
-              title: "Living Area",
-            },
-            {
-              id: 2,
-              img: require("../assets/Project2.png"),
-              title: "Living Area",
-            },
-            {
-              id: 3,
-              img: require("../assets/Project3.png"),
-              title: "Living Area",
-            },
-            {
-              id: 4,
-              img: require("../assets/Project4.png"),
-              title: "Living Area",
-            },
-            {
-              id: 5,
-              img: require("../assets/Project5.png"),
-              title: "Living Area",
-            },
-            {
-              id: 6,
-              img: require("../assets/Project6.png"),
-              title: "Living Area",
-            },
-            {
-              id: 7,
-              img: require("../assets/Project7.png"),
-              title: "Living Area",
-            },
-          ],
-        },
-      ],
-      tags: ["Bathroom", "Bedroom", "Kitchen", "Living Area", "All"],
-    };
-  },
-
-  computed: {
-    sortProject() {
-      return this.count == 0 ? this.projects : this.resultArr;
+    name: "OurProject",
+    data() {
+        return {
+            count: 0,
+            resultArr: [],
+            projects: [
+                {
+                    id: 0,
+                    projectsName: "Kitchen",
+                    ourProjects: [
+                        {
+                            id: 0,
+                            img: require("../assets/Project.png"),
+                            title: "Kitchen",
+                        },
+                        {
+                            id: 1,
+                            img: require("../assets/Project1.png"),
+                            title: "Kitchen",
+                        },
+                        {
+                            id: 2,
+                            img: require("../assets/Project2.png"),
+                            title: "Kitchen",
+                        },
+                        {
+                            id: 3,
+                            img: require("../assets/Project3.png"),
+                            title: "Kitchen",
+                        },
+                        {
+                            id: 4,
+                            img: require("../assets/Project4.png"),
+                            title: "Kitchen",
+                        },
+                        {
+                            id: 5,
+                            img: require("../assets/Project5.png"),
+                            title: "Kitchen",
+                        },
+                        {
+                            id: 6,
+                            img: require("../assets/Project6.png"),
+                            title: "Kitchen",
+                        },
+                        {
+                            id: 7,
+                            img: require("../assets/Project7.png"),
+                            title: "Kitchen",
+                        },
+                    ],
+                },
+                {
+                    id: 1,
+                    projectsName: "Bathroom",
+                    ourProjects: [
+                        {
+                            id: 8,
+                            img: require("../assets/Project.png"),
+                            title: "Bathroom",
+                        },
+                        {
+                            id: 9,
+                            img: require("../assets/Project1.png"),
+                            title: "Bathroom",
+                        },
+                        {
+                            id: 10,
+                            img: require("../assets/Project2.png"),
+                            title: "Bathroom",
+                        },
+                        {
+                            id: 11,
+                            img: require("../assets/Project3.png"),
+                            title: "Bathroom",
+                        },
+                        {
+                            id: 12,
+                            img: require("../assets/Project4.png"),
+                            title: "Bathroom",
+                        },
+                        {
+                            id: 13,
+                            img: require("../assets/Project5.png"),
+                            title: "Bathroom",
+                        },
+                        {
+                            id: 14,
+                            img: require("../assets/Project6.png"),
+                            title: "Bathroom",
+                        },
+                        {
+                            id: 15,
+                            img: require("../assets/Project7.png"),
+                            title: "Bathroom",
+                        },
+                    ],
+                },
+                {
+                    id: 0,
+                    projectsName: "Bedroom",
+                    ourProjects: [
+                        {
+                            id: 0,
+                            img: require("../assets/Project.png"),
+                            title: "Bedroom",
+                        },
+                        {
+                            id: 1,
+                            img: require("../assets/Project1.png"),
+                            title: "Bedroom",
+                        },
+                        {
+                            id: 2,
+                            img: require("../assets/Project2.png"),
+                            title: "Bedroom",
+                        },
+                        {
+                            id: 3,
+                            img: require("../assets/Project3.png"),
+                            title: "Bedroom",
+                        },
+                        {
+                            id: 4,
+                            img: require("../assets/Project4.png"),
+                            title: "Bedroom",
+                        },
+                        {
+                            id: 5,
+                            img: require("../assets/Project5.png"),
+                            title: "Bedroom",
+                        },
+                        {
+                            id: 6,
+                            img: require("../assets/Project6.png"),
+                            title: "Bedroom",
+                        },
+                        {
+                            id: 7,
+                            img: require("../assets/Project7.png"),
+                            title: "Bedroom",
+                        },
+                    ],
+                },
+                {
+                    id: 0,
+                    projectsName: "Living Area",
+                    ourProjects: [
+                        {
+                            id: 0,
+                            img: require("../assets/Project.png"),
+                            title: "Living Area",
+                        },
+                        {
+                            id: 1,
+                            img: require("../assets/Project1.png"),
+                            title: "Living Area",
+                        },
+                        {
+                            id: 2,
+                            img: require("../assets/Project2.png"),
+                            title: "Living Area",
+                        },
+                        {
+                            id: 3,
+                            img: require("../assets/Project3.png"),
+                            title: "Living Area",
+                        },
+                        {
+                            id: 4,
+                            img: require("../assets/Project4.png"),
+                            title: "Living Area",
+                        },
+                        {
+                            id: 5,
+                            img: require("../assets/Project5.png"),
+                            title: "Living Area",
+                        },
+                        {
+                            id: 6,
+                            img: require("../assets/Project6.png"),
+                            title: "Living Area",
+                        },
+                        {
+                            id: 7,
+                            img: require("../assets/Project7.png"),
+                            title: "Living Area",
+                        },
+                    ],
+                },
+            ],
+            tags: ["Bathroom", "Bedroom", "Kitchen", "Living Area", "All"],
+        };
     },
-  },
-
-  methods: {
-    sortProjects(tag) {
-      this.count = 1;
-      this.resultArr = [];
-      let arr = this.projects.filter((project) => project.projectsName == tag);
-      this.resultArr.push(arr[0]);
-      if (tag == "All") {
-        this.count = 0;
-      }
+    computed: {
+        sortProject() {
+            return this.count == 0 ? this.projects : this.resultArr;
+        },
     },
-  },
+    methods: {
+        sortProjects(tag) {
+            this.count = 1;
+            this.resultArr = [];
+            let arr = this.projects.filter((project) => project.projectsName == tag);
+            this.resultArr.push(arr[0]);
+            if (tag == "All") {
+                this.count = 0;
+            }
+        },
+    },
+    components: { HeaderComp, FooterComp }
 };
 </script>
 

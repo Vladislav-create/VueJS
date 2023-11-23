@@ -1,22 +1,6 @@
 <template>
   <div>
-    <!-- <section class="header center">
-            <section class="header__left">
-                    <a href="index.html" class="header__left__logo"  rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                            <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>
-                            </svg>
-                    </a>
-                    <a href="index.html" class="header__left__text"  rel="noopener noreferrer">
-                        Interno
-                    </a>
-            </section>
-            <section class="header__right">
-                <a href="index.html" class="header__right__nav">Home</a>
-                <a href="" class="header__right__nav">Project</a>
-                <a href="./blog.html" class="header__right__nav">Blog</a>
-            </section>
-        </section> -->
+    <HeaderComp />
     <section class="blogDetails-header">
       <img
         class="blogDetails-header__img"
@@ -64,102 +48,94 @@
         </button>
       </section>
     </section>
+    <FooterComp />
   </div>
 </template>
 
 <script>
+import FooterComp from './FooterComp.vue';
+import HeaderComp from './HeaderComp.vue';
+
 export default {
-  name: "BlogDetailsComp",
-
-  data() {
-    return {
-      count: 0,
-      resultArr: [],
-      projects: [
-        {
-          id: 0,
-          title: "Kitchen",
-          img: require("../assets/Kitchen.png"),
-          description:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
-          subTitle: "Design sprints are great",
-          descriptionMore:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          secondImg: require("../assets/Kitchen1.png"),
-        },
-        {
-          id: 1,
-          title: "Bedroom",
-          img: require("../assets/Kitchen.png"),
-          description:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
-          subTitle: "Design sprints are great",
-          descriptionMore:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          secondImg: require("../assets/Kitchen1.png"),
-        },
-        {
-          id: 2,
-          title: "Building",
-          img: require("../assets/Kitchen.png"),
-          description:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
-          subTitle: "Design sprints are great",
-          descriptionMore:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          secondImg: require("../assets/Kitchen1.png"),
-        },
-        {
-          id: 3,
-          title: "Architecture",
-          img: require("../assets/Kitchen.png"),
-          description:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
-          subTitle: "Design sprints are great",
-          descriptionMore:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          secondImg: require("../assets/Kitchen1.png"),
-        },
-        {
-          id: 4,
-          title: "Kitchen Planning",
-          img: require("../assets/Kitchen.png"),
-          description:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
-          subTitle: "Design sprints are great",
-          descriptionMore:
-            "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
-          secondImg: require("../assets/Kitchen1.png"),
-        },
-      ],
-      tags: [
-        "Kitchen",
-        "Bedroom",
-        "Building",
-        "Architecture",
-        "Kitchen Planning",
-        "All",
-      ],
-    };
-  },
-
-  computed: {
-    sortProject() {
-      return this.count == 0 ? this.projects : this.resultArr;
+    name: "BlogDetailsComp",
+    data() {
+        return {
+            count: 0,
+            resultArr: [],
+            projects: [
+                {
+                    id: 0,
+                    title: "Kitchen",
+                    img: require("../assets/Kitchen.png"),
+                    description: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
+                    subTitle: "Design sprints are great",
+                    descriptionMore: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
+                    secondImg: require("../assets/Kitchen1.png"),
+                },
+                {
+                    id: 1,
+                    title: "Bedroom",
+                    img: require("../assets/Kitchen.png"),
+                    description: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
+                    subTitle: "Design sprints are great",
+                    descriptionMore: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
+                    secondImg: require("../assets/Kitchen1.png"),
+                },
+                {
+                    id: 2,
+                    title: "Building",
+                    img: require("../assets/Kitchen.png"),
+                    description: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
+                    subTitle: "Design sprints are great",
+                    descriptionMore: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
+                    secondImg: require("../assets/Kitchen1.png"),
+                },
+                {
+                    id: 3,
+                    title: "Architecture",
+                    img: require("../assets/Kitchen.png"),
+                    description: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
+                    subTitle: "Design sprints are great",
+                    descriptionMore: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
+                    secondImg: require("../assets/Kitchen1.png"),
+                },
+                {
+                    id: 4,
+                    title: "Kitchen Planning",
+                    img: require("../assets/Kitchen.png"),
+                    description: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of     htly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
+                    subTitle: "Design sprints are great",
+                    descriptionMore: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
+                    secondImg: require("../assets/Kitchen1.png"),
+                },
+            ],
+            tags: [
+                "Kitchen",
+                "Bedroom",
+                "Building",
+                "Architecture",
+                "Kitchen Planning",
+                "All",
+            ],
+        };
     },
-  },
-
-  methods: {
-    sortProjects(tag) {
-      this.count = 1;
-      this.resultArr = [];
-      let arr = this.projects.filter((project) => project.title == tag);
-      this.resultArr.push(arr[0]);
-      if (tag == "All") {
-        this.count = 0;
-      }
+    computed: {
+        sortProject() {
+            return this.count == 0 ? this.projects : this.resultArr;
+        },
     },
-  },
+    methods: {
+        sortProjects(tag) {
+            this.count = 1;
+            this.resultArr = [];
+            let arr = this.projects.filter((project) => project.title == tag);
+            this.resultArr.push(arr[0]);
+            if (tag == "All") {
+                this.count = 0;
+            }
+        },
+    },
+    components: { HeaderComp, FooterComp }
 };
 </script>
 

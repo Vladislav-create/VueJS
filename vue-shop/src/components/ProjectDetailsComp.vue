@@ -1,5 +1,6 @@
 <template>
   <div>
+    <HeaderComp />
     <section class="header">
       <img class="header__img" src="../assets/ProjectDetails.png" alt="" />
     </section>
@@ -81,36 +82,34 @@
       <button @click="pagination" class="pagination__btn"></button>
       <button @click="pagination" class="pagination__btn"></button>
     </section>
+    <FooterComp />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations} from "vuex";
+import HeaderComp from "./HeaderComp.vue";
+import FooterComp from "./FooterComp.vue";
 export default {
-  name: "ProjectDetailsComp",
-
-  data() {
-    return {
-
-    };
-  },
-
-  mounted() {},
-
-  methods: {
-    ...mapMutations(['CHAGE_PATH']),
-    pagination() {
-        this.CHAGE_PATH()
-      console.log(this.imgUrl);
+    name: "ProjectDetailsComp",
+    data() {
+        return {};
     },
-  },
-
-  computed: {
-    ...mapGetters(["getImages"]),
-    imgUrl(){
-        return require(`@/assets/${this.getImages}`)
-    }
-  },
+    mounted() { },
+    methods: {
+        ...mapMutations(['CHAGE_PATH']),
+        pagination() {
+            this.CHAGE_PATH();
+            console.log(this.imgUrl);
+        },
+    },
+    computed: {
+        ...mapGetters(["getImages"]),
+        imgUrl() {
+            return require(`@/assets/${this.getImages}`);
+        }
+    },
+    components: { HeaderComp, FooterComp }
 };
 </script>
 
@@ -130,6 +129,9 @@ a {
 .center {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
+}
+.header__img {
+  width: 100%;
 }
 .content {
   display: flex;
