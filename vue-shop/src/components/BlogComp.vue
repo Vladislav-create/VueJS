@@ -6,21 +6,19 @@
             <div class="header-nav-elem">
                 <h3 class="header-nav-elem__title">Articles & News</h3>
                 <div class="header-nav-elem__bread-crumbs">
-                    <a class="header-nav-elem__bread-crumbs__crumb" href="#">Home</a>
-                    <span>/</span>
-                    <a class="header-nav-elem__bread-crumbs__crumb" href="#">Blog</a>
+                    <router-link to="/indexcomp"><a class="header-nav-elem__bread-crumbs__crumb" href="#">Home</a></router-link>
+                    <span> / </span>
+                    <router-link to="/blogcomp"><a class="header-nav-elem__bread-crumbs__crumb" href="#">Blog</a></router-link>
                 </div>
             </div>
         </section>
         <section class="latest-post center">
             <h3 class="latest-post__header">Latest Post</h3>
             <div class="latest-post__content">
-                <img src="../assets/latestPost.png" alt="" class="latest-post__content__img">
+                <img :src="latestPost.postImg" alt="" class="latest-post__content__img">
                 <div class="latest-post__content__text">
-                    <h3 class="latest-post__content__text__title">Low Cost Latest Invented Interior Designing Ideas</h3>
-                    <p class="latest-post__content__text__discribe">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.
-                        <br><br>
-                        Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
+                    <h3 class="latest-post__content__text__title">{{ latestPost.postTitle }}</h3>
+                    <p class="latest-post__content__text__discribe">{{ latestPost.postText }}</p>
                     <div class="latest-post__content__text__footer">
                         <p class="latest-post__content__text__footer__date">26 December,2022 </p>
                         <router-link to="/blogdetailscomp"><svg class="latest-post__content__text__footer__btn" width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,22 +39,30 @@
                 </p>
             </div>
             <div class="articles-news__carts">
-                <div class="articles-news__carts__box" v-for="product in products" :key="product.id">
+                <div class="articles-news__carts__box" v-for="product in arrForPagination" :key="product.id">
                     <article class="articles-news__carts__cart">
                         <img class="articles-news__carts__cart__img" :src="product.imgSrc" alt="">
                         <div class="articles-news__carts__cart__info">
                             <h3 class="articles-news__carts__cart__title">{{ product.title }}</h3>
                             <div class="articles-news__carts__cart__info-box">
                                 <p class="articles-news__carts__cart__date">26 December,2022</p>
-                                <svg class="articles-news__carts__cart__btn" xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
+                                <router-link to="/404">                                
+                                    <svg class="articles-news__carts__cart__btn" xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
                                     <circle cx="26" cy="26.267" r="26" fill="#F4F0EC"/>
                                     <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                    </svg></router-link>
                             </div>
                         </div>
                     </article>        
                 </div>
             </div>
+        </section>
+        <section class="pagination">
+                    <button @click='changePage(item)' class="pagination__btn" v-for="item in items" :key="item">{{ item }}</button>
+                    <button @click="changePagesNumber" class="pagination__btn"><svg width="6" height="13" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.55714 15L7.5 8.31429L1.55714 1.62857" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
         </section>
         <FooterComp />
     </div>
@@ -69,7 +75,10 @@ import HeaderComp from './HeaderComp.vue';
 export default {
     name: 'BlogComp',
     data() {
+        
         return {
+            currentPage: 0,
+            step: 6,
             products: [
                 {
                     id: 0,
@@ -106,13 +115,126 @@ export default {
                     imgSrc: require('../assets/Photo.png'),
                     title: 'Let’s Get Solution For Building Construction Work',
                     date: Date.now()
-                }
-            ]
+                },
+                {
+                    id: 6,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 7,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 8,
+                    imgSrc: require('../assets/Photo(1).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 9,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 10,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 11,
+                    imgSrc: require('../assets/Photo(1).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 12,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 13,
+                    imgSrc: require('../assets/Photo(2).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+                {
+                    id: 14,
+                    imgSrc: require('../assets/Photo(1).png'),
+                    title: 'Let’s Get Solution For Building Construction Work',
+                    date: Date.now()
+                },
+            ],
+            posts: [
+                {
+                    id: 0,
+                    postImg: require('../assets/latestPost.png'),
+                    postTitle: 'Test 1',
+                    postText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to      popular  belief.Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+                },
+                {
+                    id: 1,
+                    postImg: require('../assets/latestPost.png'),
+                    postTitle: 'Test 2',
+                    postText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to      popular  belief.Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+                },
+                {
+                    id: 2,
+                    postImg: require('../assets/latestPost.png'),
+                    postTitle: 'Low Cost Latest Invented Interior Designing Ideas',
+                    postText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to      popular  belief.Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+                },
+            ],
+            items: ['01', '02', '03'],
+            
         };
     },
     mounted() {
     },
-    methods: {},
+    computed: {
+        latestPost() {
+            return this.posts[this.posts.length - 1]
+        },
+        arrForPagination() {
+            const start = this.currentPage * this.step
+            const end = start + this.step
+            return this.products.slice(start, end)
+        }
+    },
+    methods: {
+        changePage(pageNumber){
+            if (pageNumber == 1) {
+                this.currentPage = 0
+            } else {
+                this.currentPage = +pageNumber - 1
+            }
+            
+        },
+        changePagesNumber(){
+            let start = +this.items[this.items.length-1]
+            let newEl = start
+            let newArr = []
+            let check = +this.items[this.items.length-1]
+            for (let i = 0; i < this.items.length; i++) {
+                check = +this.items[this.items.length-1]
+                if (check < 9) {
+                    newEl += 1
+                    newArr.push(`0${newEl}`)
+                } else {
+                    newEl += 1
+                    newArr.push(newEl)
+                }
+                
+            }
+            this.items = newArr
+        }
+    },
     components: { HeaderComp, FooterComp }
 };
 </script>
@@ -287,12 +409,15 @@ export default {
         &__carts {
             display: flex;
             flex-wrap: wrap;
-            gap: 24px; 
+            gap: 23px; 
             &__box {
                 padding: 21px;
                 border-radius: 62px;
                 border: 1px solid #E7E7E7;
                 box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+            }
+            &__box:hover {
+                background-color: #E7E7E7;
             }
             &__cart {
                 max-width: 340px;
@@ -302,6 +427,33 @@ export default {
                     align-items: center;
                 }
             }
+        }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 51px;
+        margin-bottom: 200px;
+        &__btn {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            padding: 14px 17px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+        }
+        &__btn:last-child {
+            border-radius: 50%;
+            padding: 18px 23px 20px 23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__btn:hover {
+            background-color: #E7E7E7;
         }
     }
 

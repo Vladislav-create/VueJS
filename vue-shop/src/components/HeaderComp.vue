@@ -12,7 +12,7 @@
             </section>
             <section class="header__right">
                 <router-link to="/indexcomp" class="header__right__nav">Home</router-link>
-                <router-link to="/projectdetailscomp" class="header__right__nav">Project</router-link>
+                <router-link to="/ourproject" class="header__right__nav">Project</router-link>
                 <router-link to="/blogcomp" class="header__right__nav">Blog</router-link>
             </section>
         </section>

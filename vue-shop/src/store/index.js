@@ -25,9 +25,9 @@ export default new Vuex.Store({
         quantity: 1
       },
     ],
-    images: 'ProjectDetails-info.png',
+    images: 'Project-details-1.png',
     paths: [
-      'ProjectDetails-info.png',
+      'Project-details-1.png',
       'Project1.png',
       'Project2.png',
     ]

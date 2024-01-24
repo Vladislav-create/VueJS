@@ -10,6 +10,16 @@
     </section>
     <section class="blogDetails-content center">
       <div class="blogDetails-content__box">
+        <section class="blogDetails-content__tags">
+        <button
+          class="blogDetails-content__tags__btn"
+          v-for="tag in tags"
+          :key="tag"
+          @click="sortProjects(tag)"
+        >
+          {{ tag }}
+        </button>
+        </section>
         <section
           class="blogDetails-content__info"
           v-for="project in sortProject[0].ourProjects"
@@ -43,16 +53,6 @@
           </div>
         </section>
       </div>
-      <section class="blogDetails-content__tags">
-        <button
-          class="blogDetails-content__tags__btn"
-          v-for="tag in tags"
-          :key="tag"
-          @click="sortProjects(tag)"
-        >
-          {{ tag }}
-        </button>
-      </section>
     </section>
     <FooterComp />
   </div>
@@ -162,7 +162,7 @@ export default {
                     ],
                 },
                 {
-                    id: 0,
+                    id: 2,
                     projectsName: "Bedroom",
                     ourProjects: [
                         {
@@ -208,7 +208,7 @@ export default {
                     ],
                 },
                 {
-                    id: 0,
+                    id: 3,
                     projectsName: "Living Area",
                     ourProjects: [
                         {
@@ -340,6 +340,26 @@ a {
     display: flex;
     flex-direction: column;
     gap: 60px;
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    &__btn {
+      color: #000;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.36px;
+      padding: 9px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    &__btn:hover {
+      color: #FFF;
+      background-color: #292F36;
+    }
   }
 }
 </style>

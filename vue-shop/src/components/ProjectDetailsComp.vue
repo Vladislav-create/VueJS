@@ -2,7 +2,7 @@
   <div>
     <HeaderComp />
     <section class="header">
-      <img class="header__img" src="../assets/ProjectDetails.png" alt="" />
+      <img class="header__img" src="../assets/Project-details-main.png" alt="" />
     </section>
     <section class="content center">
       <div class="content__info">
